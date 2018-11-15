@@ -148,7 +148,7 @@ workflows:
                     branches:
                     only:
                         - /.*-build/
-    nightly:
+    # nightly:
         # triggers:
         #     - schedule:
         #         cron: "* * * * *"
