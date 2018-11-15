@@ -15,7 +15,7 @@ jobs:
                 command: |
                     git config --global user.email "github@mansheim.com"
                     git config --global user.name "Ben Mansheim"
-                    git pull origin master
+                    git pull master
 
 workflows:
     version: 2
