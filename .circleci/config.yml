@@ -121,7 +121,9 @@ workflows:
             - build-staging:
                 filters:
                     branches:
-                    ignore: /.*-build/
+                    ignore:
+                        - /.*-build/
+                        - /nightly-.*/
             - build-prod:
                 filters:
                     branches:
@@ -131,7 +133,9 @@ workflows:
                     - build-staging
                 filters:
                     branches:
-                    ignore: /.*-build/
+                    ignore:
+                        - /.*-build/
+                        - /nightly-.*/
             - deploy-prod:
                 requires:
                     - build-prod
@@ -140,12 +144,13 @@ workflows:
                     only:
                         - /.*-build/
     nightly:
-        triggers:
-            - schedule:
-                cron: "25 * * * *"
+        # triggers:
+        #     - schedule:
+        #         cron: "* * * * *"
+
+        jobs:
+            - rebase-latest:
                 filters:
                     branches:
                         only:
                         - nightly-rebase
-        jobs:
-            - rebase-latest
