@@ -11,10 +11,9 @@ jobs:
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
-                name: Build staging site
+                name: Pull latest master
                 command: |
-                    echo ${LOCATION}
-                    hugo -v --baseURL //docs.redislabs.com/$LOCATION
+                    git pull origin master
 
 workflows:
     version: 2
