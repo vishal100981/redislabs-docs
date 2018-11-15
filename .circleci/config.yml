@@ -16,6 +16,7 @@ jobs:
                     git config --global user.email "github@mansheim.com"
                     git config --global user.name "Ben Mansheim"
                     git checkout master
+                    git pull
                     git checkout latest-build
                     git rebase master
 
