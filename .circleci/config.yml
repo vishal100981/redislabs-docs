@@ -109,10 +109,10 @@ jobs:
         working_directory: ~/project
         steps:
             - checkout
-            - run: git pull origin master
-            - run: git checkout nightly-rebase
-            - run: git rebase master
-            - run: git push
+            # - run: git pull origin master
+            # - run: git checkout nightly-rebase
+            # - run: git rebase master
+            # - run: git push
 
 workflows:
     version: 2
