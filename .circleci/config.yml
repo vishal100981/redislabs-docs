@@ -153,5 +153,4 @@ workflows:
             - rebase-latest:
                 filters:
                     branches:
-                        only:
-                        - nightly-rebase
+                    only: nightly-rebase
