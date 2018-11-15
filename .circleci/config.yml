@@ -152,7 +152,7 @@ workflows:
         # triggers:
         #     - schedule:
         #         cron: "* * * * *"
-        jobs: rebase-latest
+        # jobs: rebase-latest
                 # filters:
                 #     branches:
                 #     only: nightly-rebase
