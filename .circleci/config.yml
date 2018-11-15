@@ -110,6 +110,9 @@ jobs:
         steps:
             # Checkout the code from the branch into the working_directory
             - checkout
+            - run:
+                name: Building site
+                command: HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com/$VERSION
             # - run: git pull origin master
             # - run: git checkout nightly-rebase
             # - run: git rebase master
@@ -149,4 +152,7 @@ workflows:
         #     - schedule:
         #         cron: "* * * * *"
         jobs:
-            - rebase-latest
+            - rebase-latest:
+                # filters:
+                #     branches:
+                #     only: nightly-rebase
